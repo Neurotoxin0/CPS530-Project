@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>CPS530 - Group Project</title>
+	<style>
+		body {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: Arial, Helvetica, sans-serif;
+			background-image: url(./Home/imgs/bgc/spikes.png);
+		}
+
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.container svg {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			left: calc(50% + 200px);
+			color: #50E3C2;
+			animation: svgRotate 1s, svgMove 1s;
+			animation-delay: 0s, 1s;
+			animation-fill-mode: forwards;
+		}
+
+		.container span {
+			position: absolute;
+			visibility: hidden;
+		}
+
+		.container #top {
+			font-size: 80px;
+			font-weight: 700;
+			animation: showTop 1.5s;
+			animation-delay: 1s;
+			animation-fill-mode: forwards;
+		}
+
+		.container #bottom {
+			font-size: 40px;
+			animation: showBottom 1.5s;
+			animation-delay: 1s;
+			animation-fill-mode: forwards;
+		}
+
+		.container #note {
+			font-size: 20px;
+			top: calc(50% + 220px);
+			color: grey;
+			animation: showNote 1s;
+			animation-delay: 2.1s;
+			animation-fill-mode: forwards;
+			animation-timing-function: linear;
+		}
+
+		@keyframes svgRotate {
+			0% {
+				transform: scale(0, 0) rotate(0deg);
+			}
+
+			50% {
+				transform: scale(1, 1) rotate(180deg);
+			}
+
+			75% {
+				transform: scale(0.7, 0.7) rotate(270deg);
+			}
+
+			100% {
+				transform: scale(1, 1) rotate(-360deg);
+			}
+		}
+
+		@keyframes svgMove {
+			0% {
+				transform: translate(0, 0);
+			}
+
+			100% {
+				transform: translate(-250px, 0);
+			}
+		}
+
+		@keyframes showBottom {
+			0% {
+				opacity: 0;
+				visibility: visible;
+				transform: translate(0, 300px);
+			}
+
+			100% {
+				opacity: 1;
+				visibility: visible;
+				transform: translate(0, 110px);
+			}
+		}
+
+		@keyframes showTop {
+			0% {
+				opacity: 0;
+				visibility: visible;
+				transform: translate(0, -300px);
+			}
+
+			100% {
+				opacity: 1;
+				visibility: visible;
+				transform: translate(0, -130px);
+			}
+		}
+
+		@keyframes showNote {
+			0% {
+				opacity: 0;
+				visibility: visible;
+			}
+
+			100% {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<span id="top">CPS530 - Group Project</span>
+		<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt-fill" fill="currentColor"
+			xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd"
+				d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+		</svg>
+		<span id="bottom">Ruoling Yu, Wentao Bai, Yang Xu</span>
+		<span id="note"> - Click to Start - </span>
+	</div>
+	<script>
+		var box = document.querySelector('.container');
+		var note = document.getElementById('note');
+		console.log(note);
+		note.addEventListener("webkitAnimationEnd", function () {
+			document.documentElement.addEventListener('click', function (event) {
+				window.location.replace("./Home/home.php");
+			});
+		});
+	</script>
+</body>
+
+</html>
