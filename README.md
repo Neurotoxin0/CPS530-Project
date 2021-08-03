@@ -1,7 +1,7 @@
 # Continents Explorer
 Group Project for CPS 530
 
-- to create a traveller's help site that provides advice for those who want to travel after the pandemic but do not know where to go.
+- To create a traveller's help site that provides advice for those who want to travel after the pandemic but do not know where to go.
 - For those who have a general idea of where they want to go but are undecided, a rotating map of the seven continents on the homepage and a world map below to help educate the traveller on information like continental scenery, customs, etc. with travelling suggestions
 - For those who are undecided, a questionnaire on the navigation bar would effectively help them decide on where to travel depending on the answers they give.
 
